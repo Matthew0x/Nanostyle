@@ -52,7 +52,7 @@ set afterends
 # set casesensitive
 
 ## Constantly display the cursor position in the status bar or minibar.
-# set constantshow
+set constantshow
 
 ## Use cut-from-cursor-to-end-of-line by default.
 # set cutfromcursor
@@ -124,7 +124,7 @@ set mouse
 # set operatingdir ""
 
 ## Remember the cursor position in each file for the next editing session.
-# set positionlog
+set positionlog
 
 ## Preserve the XON and XOFF keys (^Q and ^S).
 # set preserve
@@ -135,7 +135,7 @@ set mouse
 # set punct "!.?"
 
 ## Make status-bar messages disappear after 1 keystroke instead of after 20.
-# set quickblank
+set quickblank
 
 ## The regular expression that matches quoting characters in email
 ## or line-comment introducers in source code.  The default is:
@@ -229,16 +229,17 @@ set zap
 
 ## In root's .nanorc you might want to use:
 set titlecolor bold,orange
-# set promptcolor black,yellow
-# set statuscolor bold,white,magenta
-# set errorcolor bold,white,red
-# set spotlightcolor black,orange
-# set selectedcolor lightwhite,cyan
-# set stripecolor ,yellow
+set promptcolor bold,lightyellow
+set statuscolor bold,orange
+set errorcolor bold,lightwhite,red
+set spotlightcolor bold,lightyellow
+set selectedcolor bold,orange
+set stripecolor bold,lightyellow
 set scrollercolor orange
-set numbercolor orange
-set keycolor lightyellow
-# set functioncolor magenta
+set numbercolor bold,orange
+set keycolor bold,lightyellow
+set functioncolor lightwhite
+# set minicolor bold,orange
 
 
 ## === Syntax coloring ===
@@ -279,9 +280,6 @@ include "/usr/share/nano/*.nanorc"
 ## <Ctrl+Backspace> delete the word to the left of the cursor with:
 # bind ^H chopwordleft main
 
-## For a more mnemonic Comment keystroke (overriding Cut-from-cursor):
-# bind M-K comment main
-
 ## If you want ^L to just refresh the screen and not center the cursor:
 # bind ^L refresh main
 
@@ -304,25 +302,27 @@ include "/usr/share/nano/*.nanorc"
 ## then uncomment these:
 
 ## Text manipulation
-bind ^C copy main		 # CTRC+X - Copy
-bind ^V paste main		 # CTRC+X - Paste
-bind ^X cut main		 # CTRC+X - Cut
-bind ^Z undo main		 # CTRC+Z - Undo
-bind ^Y redo main		 # CTRC+Y - Redo
-bind ^H replace main	 # CTRC+H - Replace
-bind ^F whereis main	 # CTRC+F - Find
-bind ^S savefile main	 # CTRC+S - Save
-bind ^Q exit main		 # CTRC+Q - Exit
-bind Del delete main	 # Del	- Delete character
-bind M-M mark main		 # ALT+X - Mark, ^M is reserved as enter and it would break newlines
+bind ^C copy main		 	# CTRL+X - Copy
+bind ^V paste main		 	# CTRL+X - Paste
+bind ^X cut main		 	# CTRL+X - Cut
+bind ^Z undo main			# CTRL+Z - Undo
+bind ^Y redo main		 	# CTRL+Y - Redo
+bind ^H replace main	 	# CTRL+H - Replace
+bind ^F whereis main	 	# CTRL+F - Find
+bind ^S savefile main	 	# CTRL+S - Save
+bind ^Q exit main		 	# CTRL+Q - Exit
+bind Del delete main	 	# Del	- Delete character
+bind M-M mark main		 	# ALT+X - Mark, ^M is reserved as enter and it would break newlines
 ## Utilities
-bind ^W writeout main	 # CTRL+O - Write into file
-bind ^R insert main	 	 # CTRL+R - Read from file
-bind ^E execute main 	 # CTRL+E - Execute (script/program)
-bind F12 help all		 # F12 - Manual
+bind ^W writeout main	 	# CTRL+O - Write into file
+bind ^R insert main	 	 	# CTRL+R - Read from file
+bind ^E execute main 	 	# CTRL+E - Execute (script/program)
+bind M-C comment main 		# ALT+C - Comment/uncomment line
+bind F12 help all		 	# F12 - Manual
 ## Search
-bind ^N findnext main
-bind ^P findprevious main
+bind ^N findnext main	 	# CTRL+B - Find next
+bind ^P findprevious main	# CTRL+P - Find previous
+bind M-B backwards all  	# ALT+B - Switch backwards/forwards
 
 #bind ^B wherewas all
 #bind ^F whereis main
